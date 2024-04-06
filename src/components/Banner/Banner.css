@@ -1,0 +1,82 @@
+.wj-banner {
+  color: black;
+  text-align: right;
+  box-shadow: 0 -2px 20px 0px #aaa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+}
+
+.wj-banner nav {
+  text-align: left;
+  height: 100%;
+  margin-left: 20px;
+}
+
+.wj-banner nav ul,
+.wj-banner nav ul li {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  list-style-type: none;
+}
+
+.wj-banner nav ul {
+  height: 100%;
+}
+
+.wj-banner nav ul li {
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+.wj-banner nav ul li a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.wj-banner nav ul li:hover {
+  background-color: #fe7e5c;
+}
+.wj-banner nav ul li.selected {
+  background-color: #fe7e5c;
+}
+
+.wj-banner nav ul li:hover a {
+  color: #ffffff;
+}
+.wj-banner nav ul li.selected a {
+  color: #ffffff;
+}
+
+/* .wj-banner nav ul {
+  gap: 20px;
+} */
+
+.wj-title {
+  padding-left: 5px;
+  font-size: 2rem;
+}
+
+.epicu-logo {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.wj-logo img {
+  padding: 20px;
+  height: 80px;
+  width: auto;
+}
+
+.wj-banner ul li a {
+  text-decoration: none;
+  font-size: large;
+  font-weight: bold;
+  color: black;
+  font-family: "Poppins";
+}
