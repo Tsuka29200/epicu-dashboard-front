@@ -18,12 +18,56 @@ export default function Prospection() {
       setTimeout(() => {
         const newData = [
           {
-            date: "07/11/1997",
+            id: 1,
+            date: "07/11/2023",
             establishment: "FoirFouille",
             comments: "A tester",
             status: "Contacté",
           },
+          {
+            id: 2,
+            date: "12/03/2005",
+            establishment: "Supermarché X",
+            comments: "Bonne expérience",
+            status: "Finalisé",
+          },
+          {
+            id: 3,
+            date: "21/09/2010",
+            establishment: "Magasin Y",
+            comments: "Service rapide",
+            status: "Contacté",
+          },
+          {
+            id: 4,
+            date: "05/06/2015",
+            establishment: "Boutique Z",
+            comments: "Produits de qualité",
+            status: "En attente",
+          },
+          {
+            id: 5,
+            date: "18/12/2018",
+            establishment: "Centre commercial A",
+            comments: "Personnel sympathique",
+            status: "Finalisé",
+          },
+          {
+            id: 6,
+            date: "09/08/2020",
+            establishment: "Grande surface B",
+            comments: "Prix compétitifs",
+            status: "Contacté",
+          },
+          {
+            id: 7,
+            date: "03/02/2023",
+            establishment: "Marché C",
+            comments: "Grand choix de produits",
+            status: "En attente",
+          },
         ];
+
         setProspectsList(newData);
         setLoading(false);
       }, 2000); // Simulated loading time

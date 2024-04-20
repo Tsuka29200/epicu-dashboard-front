@@ -1,10 +1,19 @@
 import React from "react";
 import axios from "axios";
-import Update from "./Update";
+import { Button, Grid, createTheme, ThemeProvider } from "@mui/material";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#fe7e5c",
+    },
+  },
+});
 
 const Profile = ({ user, setUser }) => {
+  console.log("user", user);
   const handleLogout = (e) => {
-    e.preventDefault(e);
+    e.preventDefault();
     axios
       .get("/logout")
       .then((res) => {
@@ -14,14 +23,24 @@ const Profile = ({ user, setUser }) => {
       })
       .catch((err) => console.log(err));
   };
+
+  console.log("user", user);
+
   return (
-    <div>
-      <p>{`Hi ${user.name}`}</p>
-      <Update />
-      <button type="submit" onClick={(e) => handleLogout(e)}>
-        Logout
-      </button>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Grid mt={4}>
+        <p>{`Bonjour ${user.user.name}`}</p>
+        <Button
+          variant="contained"
+          color="primary"
+          sx={{ color: "white" }}
+          onClick={handleLogout}
+        >
+          Se Déconnecter
+        </Button>
+      </Grid>
+    </ThemeProvider>
   );
 };
+
 export default Profile;

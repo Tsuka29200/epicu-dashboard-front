@@ -118,7 +118,12 @@ const ProspectionForm = ({ setProspectsList, handleClose }) => {
           </Select>
         </FormControl>
         <Box mt={2}>
-          <Button variant="contained" color="primary" type="submit">
+          <Button
+            variant="contained"
+            color="primary"
+            type="submit"
+            sx={{ color: "white" }}
+          >
             Enregistrer
           </Button>
         </Box>

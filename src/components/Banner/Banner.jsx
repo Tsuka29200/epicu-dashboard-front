@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import logoepicu from "../../images/logoepicu.png"; // Import the image
 
 function Banner() {
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(0);
 
   const handleItemClick = (index) => {
     setSelectedItem(index);
@@ -41,7 +41,6 @@ function Banner() {
           </li>
         </ul>
       </nav>
-
       <Link className="wj-logo" to="/">
         <img src={logoepicu} alt="epicu-logo" />
       </Link>

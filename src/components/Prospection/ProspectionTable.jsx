@@ -15,6 +15,17 @@ import {
 
 const ProspectionTable = ({ data }) => {
   const [filterStatus, setFilterStatus] = useState("");
+  const [selectedProspectId, setSelectedProspectId] = useState(null);
+
+  const handleRowClick = (id) => {
+    console.log(id);
+    if (id === selectedProspectId) {
+      setSelectedProspectId(null);
+    } else {
+      setSelectedProspectId(id);
+    }
+    console.log("selected client", selectedProspectId);
+  };
 
   const handleChangeFilter = (event) => {
     setFilterStatus(event.target.value);
@@ -49,7 +60,7 @@ const ProspectionTable = ({ data }) => {
                 style={{
                   fontWeight: "bold",
                   fontSize: "1rem",
-                  fontFamily: "Poppins",
+                  fontFamily: "Poppins Sans Serif, sans-serif",
                 }}
               >
                 Nom de l'établissement
@@ -58,7 +69,7 @@ const ProspectionTable = ({ data }) => {
                 style={{
                   fontWeight: "bold",
                   fontSize: "1rem",
-                  fontFamily: "Poppins",
+                  fontFamily: "Poppins Sans Serif, sans-serif",
                 }}
               >
                 Date de prospection
@@ -67,7 +78,7 @@ const ProspectionTable = ({ data }) => {
                 style={{
                   fontWeight: "bold",
                   fontSize: "1rem",
-                  fontFamily: "Poppins",
+                  fontFamily: "Poppins Sans Serif, sans-serif",
                 }}
               >
                 Statut
@@ -76,7 +87,7 @@ const ProspectionTable = ({ data }) => {
                 style={{
                   fontWeight: "bold",
                   fontSize: "1rem",
-                  fontFamily: "Poppins",
+                  fontFamily: "Poppins Sans Serif, sans-serif",
                 }}
               >
                 Commentaires
@@ -84,12 +95,50 @@ const ProspectionTable = ({ data }) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {filteredData.map((item, index) => (
-              <TableRow key={index}>
-                <TableCell>{item.establishment}</TableCell>
-                <TableCell>{item.date}</TableCell>
-                <TableCell>{item.status}</TableCell>
-                <TableCell>{item.comments}</TableCell>
+            {filteredData.map((prospect, index) => (
+              <TableRow
+                key={index}
+                onClick={() => {
+                  handleRowClick(prospect.id);
+                  console.log("prospect", prospect);
+                }}
+                style={{
+                  backgroundColor:
+                    prospect.id === selectedProspectId ? "#fe7e5c" : "inherit",
+                }}
+              >
+                <TableCell
+                  style={{
+                    color:
+                      prospect.id === selectedProspectId ? "white" : "inherit",
+                  }}
+                >
+                  {prospect.establishment}
+                </TableCell>
+                <TableCell
+                  style={{
+                    color:
+                      prospect.id === selectedProspectId ? "white" : "inherit",
+                  }}
+                >
+                  {prospect.date}
+                </TableCell>
+                <TableCell
+                  style={{
+                    color:
+                      prospect.id === selectedProspectId ? "white" : "inherit",
+                  }}
+                >
+                  {prospect.status}
+                </TableCell>
+                <TableCell
+                  style={{
+                    color:
+                      prospect.id === selectedProspectId ? "white" : "inherit",
+                  }}
+                >
+                  {prospect.comments}
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
