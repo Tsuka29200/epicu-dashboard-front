@@ -6,6 +6,7 @@ import PlantDetail from "./pages/PlantDetail/PlantDetail";
 import "./App.css";
 import Prospection from "./pages/Prospection/Prospection";
 import Clients from "./pages/Clients/Clients";
+import Payments from "./pages/Payments/Payments";
 
 function AppRouter({ user, setUser }) {
   return (
@@ -17,7 +18,8 @@ function AppRouter({ user, setUser }) {
           <Route path="/categories" element={<PlantAdd />} />
           <Route path="/prospection" element={<Prospection />} />
           <Route path="/clients" element={<Clients />} />
-          <Route path="/comptabilite" element={<PlantDetail />} />
+          <Route path="/comptabilite" element={<Payments />} />
+          <Route path="/toto" element={<PlantDetail />} />
         </Routes>
       </main>
     </div>
