@@ -6,7 +6,7 @@ import {
   DialogActions,
   Button,
 } from "@mui/material";
-import ProspectionForm from "./ProspectionForm"; // Assuming your form component is named ProspectionForm
+import ProspectionForm from "./ProspectionForm";
 
 const AddProspectionDialog = ({
   open,
@@ -24,8 +24,20 @@ const AddProspectionDialog = ({
   };
 
   return (
-    <Dialog open={open} onClose={handleClose}>
-      <DialogTitle>Ajouter un prospect</DialogTitle>
+    <Dialog
+      open={open}
+      onClose={handleClose}
+      PaperProps={{ sx: { borderRadius: "25px !important" } }}
+    >
+      <DialogTitle
+        style={{
+          fontWeight: "bold",
+          fontSize: "1rem",
+          fontFamily: "Poppins Sans Serif, sans-serif",
+        }}
+      >
+        Ajouter un prospect
+      </DialogTitle>
       <DialogContent>
         <ProspectionForm
           onSubmit={handleSubmit}
@@ -34,7 +46,9 @@ const AddProspectionDialog = ({
         />
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleClose}>Annuler</Button>
+        <Button sx={{ color: "#fe7e5c" }} onClick={handleClose}>
+          Annuler
+        </Button>
       </DialogActions>
     </Dialog>
   );

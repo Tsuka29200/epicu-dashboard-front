@@ -6,18 +6,18 @@ import {
   DialogActions,
   Button,
 } from "@mui/material";
-import ClientForm from "./ClientForm";
+import PaymentForm from "./PaymentForm";
 
-const AddClientDialog = ({
+const AddPaymentDialog = ({
   open,
   onClose,
   onSubmit,
-  setClientsList,
+  setPaymentsList,
   editMode,
-  selectedClient,
-  setSelectedClientId,
+  selectedPayment,
+  setSelectedPaymentId,
   setEditMode,
-  clientsList,
+  paymentsList,
 }) => {
   const handleClose = () => {
     onClose();
@@ -26,7 +26,7 @@ const AddClientDialog = ({
   const handleSubmit = (formData) => {
     onSubmit(formData);
     onClose();
-    setSelectedClientId(null);
+    setSelectedPaymentId(null);
     setEditMode("Add");
   };
 
@@ -43,16 +43,18 @@ const AddClientDialog = ({
           fontFamily: "Poppins Sans Serif, sans-serif",
         }}
       >
-        {editMode === "Add" ? "Ajouter un Client" : "Modification du client"}
+        {editMode === "Add"
+          ? "Ajouter un Paiement"
+          : "Modification du paiement"}
       </DialogTitle>
       <DialogContent>
-        <ClientForm
+        <PaymentForm
           onSubmit={handleSubmit}
-          setClientsList={setClientsList}
+          setPaymentsList={setPaymentsList}
           handleClose={handleClose}
           editMode={editMode}
-          selectedClient={selectedClient}
-          clientsList={clientsList}
+          selectedPayment={selectedPayment}
+          paymentsList={paymentsList}
         />
       </DialogContent>
       <DialogActions>
@@ -64,4 +66,4 @@ const AddClientDialog = ({
   );
 };
 
-export default AddClientDialog;
+export default AddPaymentDialog;

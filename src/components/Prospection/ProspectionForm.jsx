@@ -14,7 +14,7 @@ import {
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#fe7e5c", // Change the main color to your desired orange color
+      main: "#fe7e5c",
     },
   },
 });
@@ -26,26 +26,22 @@ const ProspectionForm = ({ setProspectsList, handleClose }) => {
   const [status, setStatus] = useState("");
 
   const handleFormSubmit = (event) => {
-    event.preventDefault(); // Prevent default form submission behavior
+    event.preventDefault();
 
-    // Create a new prospect object from form data
     const newProspect = {
-      date: date, // Assuming date, establishment, comments, and status are state variables
+      date: date,
       establishment: establishment,
       comments: comments,
       status: status,
     };
 
-    // Add the new prospect object to the prospectsList array
     setProspectsList((prevProspects) => [...prevProspects, newProspect]);
 
-    // Clear the form fields after submission
     setDate("");
     setEstablishment("");
     setComments("");
     setStatus("");
 
-    // Log the new prospect object
     console.log("New prospect:", newProspect);
     handleClose();
   };
@@ -118,7 +114,12 @@ const ProspectionForm = ({ setProspectsList, handleClose }) => {
           </Select>
         </FormControl>
         <Box mt={2}>
-          <Button variant="contained" color="primary" type="submit">
+          <Button
+            variant="contained"
+            color="primary"
+            type="submit"
+            sx={{ color: "white" }}
+          >
             Enregistrer
           </Button>
         </Box>
