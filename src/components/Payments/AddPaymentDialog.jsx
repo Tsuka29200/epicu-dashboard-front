@@ -6,7 +6,7 @@ import {
   DialogActions,
   Button,
 } from "@mui/material";
-import PaymentForm from "./PaymentForm"; // Assuming your form component is named PaymentForm
+import PaymentForm from "./PaymentForm";
 
 const AddPaymentDialog = ({
   open,

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Banner.css";
 import { Link } from "react-router-dom";
-import logoepicu from "../../images/logoepicu.png"; // Import the image
+import logoepicu from "../../images/logoepicu.png";
 
 function Banner() {
   const [selectedItem, setSelectedItem] = useState(0);

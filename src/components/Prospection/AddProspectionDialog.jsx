@@ -6,7 +6,7 @@ import {
   DialogActions,
   Button,
 } from "@mui/material";
-import ProspectionForm from "./ProspectionForm"; // Assuming your form component is named ProspectionForm
+import ProspectionForm from "./ProspectionForm";
 
 const AddProspectionDialog = ({
   open,

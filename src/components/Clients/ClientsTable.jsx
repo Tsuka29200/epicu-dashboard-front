@@ -88,7 +88,6 @@ const ClientsTable = ({
       !paymentStatusFilter ||
       client.paymentStatus.toLowerCase() === paymentStatusFilter.toLowerCase();
 
-    // Convert selected date to a Date object
     const filterShootingDate = shootingDateFilter
       ? new Date(shootingDateFilter)
       : null;
@@ -102,7 +101,6 @@ const ClientsTable = ({
       ? new Date(publicationDateFilter)
       : null;
 
-    // Check if the shooting date matches the selected date
     const shootingDateMatches =
       !filterShootingDate ||
       new Date(client.shootingDate).toDateString() ===
@@ -141,7 +139,7 @@ const ClientsTable = ({
             display: "flex",
             justifyContent: "center",
             "& > *": {
-              margin: "0 8px", // Adjust the margin value as needed
+              margin: "0 8px",
             },
           }}
         >

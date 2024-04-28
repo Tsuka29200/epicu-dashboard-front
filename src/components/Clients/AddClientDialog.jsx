@@ -6,7 +6,7 @@ import {
   DialogActions,
   Button,
 } from "@mui/material";
-import ClientForm from "./ClientForm"; // Assuming your form component is named ClientForm
+import ClientForm from "./ClientForm";
 
 const AddClientDialog = ({
   open,

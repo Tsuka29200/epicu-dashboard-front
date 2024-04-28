@@ -37,7 +37,7 @@ const ProspectionTable = ({ data }) => {
 
   return (
     <div>
-      <FormControl>
+      {/* <FormControl>
         <InputLabel id="filter-status-label">Filtrer par statut</InputLabel>
         <Select
           labelId="filter-status-label"
@@ -50,7 +50,7 @@ const ProspectionTable = ({ data }) => {
           <MenuItem value="Intérêt confirmé">Intérêt confirmé</MenuItem>
           <MenuItem value="Non intéressé">Non intéressé</MenuItem>
         </Select>
-      </FormControl>
+      </FormControl> */}
 
       <TableContainer component={Paper}>
         <Table>

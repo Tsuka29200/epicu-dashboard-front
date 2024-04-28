@@ -11,7 +11,7 @@ export default function Payments() {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
   const [initializeData, setInitializeData] = useState(true);
-  const [loading, setLoading] = useState(true); // Initially set loading to true
+  const [loading, setLoading] = useState(true);
   const [editMode, setEditMode] = useState("Add");
   const [selectedPaymentId, setSelectedPaymentId] = useState(null);
   const selectedPayment =
@@ -20,10 +20,8 @@ export default function Payments() {
       : null;
 
   useEffect(() => {
-    // Simulate loading data from an API or database
     const loadData = async () => {
       setLoading(true);
-      // Simulating an API call with a setTimeout
       setTimeout(() => {
         const newData = [
           {
@@ -100,7 +98,7 @@ export default function Payments() {
 
         setPaymentsList(newData);
         setLoading(false);
-      }, 2000); // Simulated loading time
+      }, 2000);
     };
 
     if (initializeData) {

@@ -35,32 +35,28 @@ const PaymentForm = ({
   const [loading, setLoading] = useState(true);
   const clientNames = Array.from(
     new Set(paymentsList.map((payment) => payment.clientName))
-  ); // Get unique client names
+  );
   console.log("clientsNames", clientNames);
   const formatDate = (dateString) => {
-    if (!dateString) return ""; // Handle empty date string
+    if (!dateString) return "";
 
-    // Extract year, month, and day from the dateString
     const parts = dateString.split("-");
     if (parts.length !== 3) {
       console.error(`Invalid date string: ${dateString}`);
-      return ""; // Return empty string for invalid dates
+      return "";
     }
 
     const year = parseInt(parts[0], 10);
     const month = parseInt(parts[1], 10);
     const day = parseInt(parts[2], 10);
 
-    // Create a new Date object with the parsed values
-    const date = new Date(year, month - 1, day); // Subtract 1 from month
+    const date = new Date(year, month - 1, day);
 
-    // Check if the date is valid
     if (isNaN(date.getTime())) {
       console.error(`Invalid date string: ${dateString}`);
-      return ""; // Return empty string for invalid dates
+      return "";
     }
 
-    // Format the date as "yyyy-MM-dd"
     const formattedDate = date.toISOString().substr(0, 10);
 
     return formattedDate;
@@ -77,17 +73,14 @@ const PaymentForm = ({
     };
 
     if (editMode === "Edit" && selectedPayment) {
-      // If in "Edit" editMode, update the existing item
       const updatedPaymentsList = paymentsList.map((payment) =>
         payment === selectedPayment ? { ...payment, ...newPayment } : payment
       );
       setPaymentsList(updatedPaymentsList);
     } else {
-      // If in "Add" editMode, add a new payment
       setPaymentsList((prevPayments) => [...prevPayments, newPayment]);
     }
 
-    // Clear form fields after submission
     setClientName("");
     setReceptionDate("");
     setAmountHT("");
@@ -99,13 +92,12 @@ const PaymentForm = ({
   useEffect(() => {
     const loadData = () => {
       if (editMode === "Edit" && selectedPayment) {
-        // Populate form fields with existing item values if in "Edit" editMode
         setClientName(selectedPayment.clientName);
         setReceptionDate(formatDate(selectedPayment.receptionDate));
         setAmountHT(selectedPayment.amountHT);
         setAmountTTC(selectedPayment.amountTTC);
       }
-      setLoading(false); // Set loading to false when data is loaded
+      setLoading(false);
     };
 
     loadData();
@@ -113,7 +105,7 @@ const PaymentForm = ({
 
   return (
     <ThemeProvider theme={theme}>
-      {loading ? ( // Show loading spinner while loading
+      {loading ? (
         <Box
           display="flex"
           justifyContent="center"

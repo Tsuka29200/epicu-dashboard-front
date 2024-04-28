@@ -70,12 +70,10 @@ const PaymentsTable = ({
       .toLowerCase()
       .includes(searchFilter.toLowerCase());
 
-    // Convert selected date to a Date object
     const filterReceptionDate = receptionDateFilter
       ? new Date(receptionDateFilter)
       : null;
 
-    // Check if the shooting date matches the selected date
     const receptionDateMatches =
       !filterReceptionDate ||
       new Date(payment.receptionDate).toDateString() ===
@@ -94,7 +92,7 @@ const PaymentsTable = ({
             display: "flex",
             justifyContent: "center",
             "& > *": {
-              margin: "0 8px", // Adjust the margin value as needed
+              margin: "0 8px",
             },
           }}
         >
